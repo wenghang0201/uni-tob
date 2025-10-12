@@ -13,8 +13,13 @@
 			</view>
 		</view>
 
+		<!-- 用户数量显示 -->
+		<view class="user-count-bar">
+			<text class="count-label">用户数量：</text><text class="count-value">{{ totalUserCount }}个</text>
+		</view>
+
 		<!-- 用户列表用scroll-view包裹 -->
-		<scroll-view style="height: calc(100vh - 120rpx);" scroll-y @scrolltolower="loadMore">
+		<scroll-view style="height: calc(100vh - 220rpx);" scroll-y @scrolltolower="loadMore">
 			<view class="list_content">
 				<view class="mescroll-body mescroll-render-touch style-Yobop">
 					<view v-if="userList.length <= 0" class="flex justify-center items-center h-100vh">
@@ -306,6 +311,26 @@ export default {
 
 .search-btn {
 	width: 160rpx;
+}
+
+/* 用户数量显示栏样式 */
+.user-count-bar {
+	background-color: #fff;
+	padding: 20rpx 30rpx;
+	border-bottom: 1px solid #eaeaea;
+	display: flex;
+	align-items: center;
+}
+
+.count-label {
+	font-size: 28rpx;
+	color: #666;
+}
+
+.count-value {
+	font-size: 28rpx;
+	color: var(--themeColor);
+	font-weight: 600;
 }
 
 /* 移除大量不再使用的样式 */

@@ -14,7 +14,7 @@
 				<view class="category-icon">
 					<u-icon name="account" color="var(--themeColor)" size="36"></u-icon>
 				</view>
-				<text class="category-text">全部用户</text>
+				<text class="category-text">全部用户 <text class="count-badge" v-if="totalUserCount > 0">({{ totalUserCount }})</text></text>
 			</view>
 		</view>
 		<view class="category-list">
@@ -67,7 +67,7 @@
 		</view>
 		
 		<!-- 底部加载更多 -->
-		<view class="load-more" @click="loadMore" v-if="orderUsers.length > 0 && orderUsers.length < totalCount">加载更多</view>
+		<view class="load-more" @click="loadMore" v-if="orderUsers.length > 0 && orderUsers.length < orderUsersTotal">加载更多</view>
 		
 		<nav-bottom :current="1"></nav-bottom>
 	</view>
@@ -82,9 +82,10 @@ export default {
 			activeCategory: 'all',
 			// 星标用户数据
 			starUsers: [],
+			starUsersTotal: 0, // 星标用户总数
 			// 下单用户数据
 			orderUsers: [],
-			totalCount: 0,
+			orderUsersTotal: 0, // 下单用户总数
 			//查询条件
 			queryParam: {
 				pageNo: 1,
@@ -93,6 +94,11 @@ export default {
 				orderUserFlag: 0
 			}
 		};
+	},
+	computed: {
+		totalUserCount() {
+			return this.starUsersTotal + this.orderUsersTotal;
+		}
 	},
 	onShow() {
 		this.fetchStarUsers();
@@ -114,6 +120,7 @@ export default {
 			storeUserPage(params).then(res => {
 				if (res.success) {
 					this.starUsers = this.formatUserData(res.voList);
+					this.starUsersTotal = res.total || 0; // 保存星标用户总数
 					uni.hideLoading();
 				}
 			}).catch(() => {
@@ -135,7 +142,7 @@ export default {
 			storeUserPage(params).then(res => {
 				if (res.success) {
 					this.orderUsers = this.formatUserData(res.voList);
-					this.totalCount = res.total || 0;
+					this.orderUsersTotal = res.total || 0; // 保存下单用户总数
 					uni.hideLoading();
 				}
 			}).catch(() => {
@@ -156,7 +163,7 @@ export default {
 
 		// 加载更多下单用户
 		loadMore() {
-			if (this.orderUsers.length >= this.totalCount) {
+			if (this.orderUsers.length >= this.orderUsersTotal) {
 				uni.showToast({
 					title: '没有更多数据了',
 					icon: 'none'
@@ -268,6 +275,12 @@ export default {
 			font-size: 30rpx;
 			color: #333;
 			line-height: 1;
+
+			.count-badge {
+				color: var(--themeColor);
+				font-weight: 500;
+				font-size: 28rpx;
+			}
 		}
 	}
 }
