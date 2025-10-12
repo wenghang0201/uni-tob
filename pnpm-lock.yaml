@@ -1,0 +1,118 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    dependencies:
+      '@dcloudio/uni-ui':
+        specifier: ^1.4.23
+        version: 1.5.7
+      html2canvas:
+        specifier: ^1.4.1
+        version: 1.4.1
+      js-audio-recorder:
+        specifier: ^1.0.7
+        version: 1.0.7
+      pinyin-pro:
+        specifier: ^3.23.1
+        version: 3.26.0
+      tailwindcss:
+        specifier: ^4.0.13
+        version: 4.1.8
+      uni-ajax:
+        specifier: ^2.4.5
+        version: 2.6.0
+      uni-read-pages:
+        specifier: ^1.0.5
+        version: 1.0.5
+      uni-simple-router:
+        specifier: ^2.0.7
+        version: 2.0.7
+      uview-ui:
+        specifier: ^2.0.35
+        version: 2.0.38
+
+packages:
+
+  '@dcloudio/uni-ui@1.5.7':
+    resolution: {integrity: sha512-DugxSIrQrze1FLdUOj9a+JEQ0bHGjnJTcGUK1mN/MivKg7nuKJBRWk5Ipa9sUdoBznX6ndz5h2e7Uao6x1CdCw==}
+
+  base64-arraybuffer@1.0.2:
+    resolution: {integrity: sha512-I3yl4r9QB5ZRY3XuJVEPfc2XhZO6YweFPI+UovAzn+8/hb3oJ6lnysaFcjVpkCPfVWFUDvoZ8kmVDP7WyRtYtQ==}
+    engines: {node: '>= 0.6.0'}
+
+  css-line-break@2.1.0:
+    resolution: {integrity: sha512-FHcKFCZcAha3LwfVBhCQbW2nCNbkZXn7KVUJcsT5/P8YmfsVja0FMPJr0B903j/E69HUphKiV9iQArX8SDYA4w==}
+
+  html2canvas@1.4.1:
+    resolution: {integrity: sha512-fPU6BHNpsyIhr8yyMpTLLxAbkaK8ArIBcmZIRiBLiDhjeqvXolaEmDGmELFuX9I4xDcaKKcJl+TKZLqruBbmWA==}
+    engines: {node: '>=8.0.0'}
+
+  js-audio-recorder@1.0.7:
+    resolution: {integrity: sha512-JiDODCElVHGrFyjGYwYyNi7zCbKk9va9C77w+zCPMmi4C6ix7zsX2h3ddHugmo4dOTOTCym9++b/wVW9nC0IaA==}
+
+  pinyin-pro@3.26.0:
+    resolution: {integrity: sha512-HcBZZb0pvm0/JkPhZHWA5Hqp2cWHXrrW/WrV+OtaYYM+kf35ffvZppIUuGmyuQ7gDr1JDJKMkbEE+GN0wfMoGg==}
+
+  tailwindcss@4.1.8:
+    resolution: {integrity: sha512-kjeW8gjdxasbmFKpVGrGd5T4i40mV5J2Rasw48QARfYeQ8YS9x02ON9SFWax3Qf616rt4Cp3nVNIj6Hd1mP3og==}
+
+  text-segmentation@1.0.3:
+    resolution: {integrity: sha512-iOiPUo/BGnZ6+54OsWxZidGCsdU8YbE4PSpdPinp7DeMtUJNJBoJ/ouUSTJjHkh1KntHaltHl/gDs2FC4i5+Nw==}
+
+  uni-ajax@2.6.0:
+    resolution: {integrity: sha512-7ZW6KvYAC5SrmsCmEnTM28AxaLDvS6pM16cfzGslb6pTsb7rYDQ/X2Un7E7gDo8fmEQuxJ/Z/1YHDAg8NkeTCg==}
+
+  uni-read-pages@1.0.5:
+    resolution: {integrity: sha512-GkrrZ0LX0vn9R5k6RKEi0Ez3Q3e2vUpjXQ8Z6/K/d28KudI9ajqgt8WEjQFlG5EPm1K6uTArN8LlqmZTEixDUA==}
+
+  uni-simple-router@2.0.7:
+    resolution: {integrity: sha512-8FKv5dw7Eoonm0gkO8udprrxzin0fNUI0+AvIphFkFRH5ZmP5ZWJ2pvnWzb2NiiqQSECTSU5VSB7HhvOSwD5eA==}
+
+  utrie@1.0.2:
+    resolution: {integrity: sha512-1MLa5ouZiOmQzUbjbu9VmjLzn1QLXBhwpUa7kdLUQK+KQ5KA9I1vk5U4YHe/X2Ch7PYnJfWuWT+VbuxbGwljhw==}
+
+  uview-ui@2.0.38:
+    resolution: {integrity: sha512-6egHDf9lXHKpG3hEjRE0vMx4+VWwKk/ReTf5x18KrIKqdvdPRqO3+B8Unh7vYYwrIxzAWIlmhZ9RJpKI/4UqPQ==}
+    engines: {HBuilderX: ^3.1.0}
+
+snapshots:
+
+  '@dcloudio/uni-ui@1.5.7': {}
+
+  base64-arraybuffer@1.0.2: {}
+
+  css-line-break@2.1.0:
+    dependencies:
+      utrie: 1.0.2
+
+  html2canvas@1.4.1:
+    dependencies:
+      css-line-break: 2.1.0
+      text-segmentation: 1.0.3
+
+  js-audio-recorder@1.0.7: {}
+
+  pinyin-pro@3.26.0: {}
+
+  tailwindcss@4.1.8: {}
+
+  text-segmentation@1.0.3:
+    dependencies:
+      utrie: 1.0.2
+
+  uni-ajax@2.6.0: {}
+
+  uni-read-pages@1.0.5: {}
+
+  uni-simple-router@2.0.7: {}
+
+  utrie@1.0.2:
+    dependencies:
+      base64-arraybuffer: 1.0.2
+
+  uview-ui@2.0.38: {}

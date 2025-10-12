@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@dcloudio/uni-ui": "^1.4.23",
+    "html2canvas": "^1.4.1",
+    "tailwindcss": "^4.0.13",
+    "uni-ajax": "^2.4.5",
+    "uni-read-pages": "^1.0.5",
+    "uni-simple-router": "^2.0.7",
+    "uview-ui": "^2.0.35",
+    "js-audio-recorder": "^1.0.7",
+    "pinyin-pro": "^3.23.1"
+  }
+}
