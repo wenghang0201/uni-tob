@@ -3,8 +3,8 @@
 		<uni-card class="w-750 mp0" 
 			v-if="lotteryOrder.schemeDetails != null && lotteryOrder.schemeDetails != undefined && lotteryOrder.schemeDetails != '' && lotteryOrder.type != 3 && lotteryOrder.type != 4 && lotteryOrder.type != 5 && lotteryOrder.type != 8 && lotteryOrder.type < 9">
 			<p>
-				<view class="fw-700">方案详情</view>
-				<view>共:{{displaySchemeDetails.length}}张票<span class="price-amount">{{lotteryOrder.price.toFixed(2)}}元</span></view>
+				<view class="fw-700 scheme-title">方案详情</view>
+				<view class="scheme-summary">共:{{displaySchemeDetails.length}}张票<span class="price-amount">{{lotteryOrder.price.toFixed(2)}}元</span></view>
 				<uni-table border :stripe="false" emptyText="接单后可查看更多数据" class="custom-table make" >
 					<!-- 表头行 -->
 					<uni-tr style="background-color:#f5f5f5">
@@ -23,7 +23,7 @@
 							<uni-td align="center">{{ displayItem.type }}</uni-td>
 							<uni-td align="left">
 								<view @click="open(displayItem._key)" v-if="displayItem.ballCombinationList"
-									style="display: flex;justify-content: left;align-items: left;flex-direction: column;font-size: 12px;">
+									style="display: flex;justify-content: left;align-items: left;flex-direction: column;font-size: 17px;">
 									<span v-for="(ball, idx) in displayItem.ballCombinationList" :key="idx">
 										<view v-if="idx > 0 && displayItem.ballCombinationList[idx - 1].number != ball.number">
 											<br>
@@ -73,8 +73,8 @@
 			v-if="lotteryOrder.schemeDetails != null && lotteryOrder.schemeDetails != undefined && lotteryOrder.schemeDetails != '' && (lotteryOrder.type == 3 || lotteryOrder.type == 4 || lotteryOrder.type == 5 || lotteryOrder.type == 8)">
 			<!-- Updated condition -->
 			<p>
-				<view class="fw-700">方案详情</view>
-				<view>共:{{displaySchemeDetails.length}}张票<span class="price-amount">{{lotteryOrder.price.toFixed(2)}}元</span></view>
+				<view class="fw-700 scheme-title">方案详情</view>
+				<view class="scheme-summary">共:{{displaySchemeDetails.length}}张票<span class="price-amount">{{lotteryOrder.price.toFixed(2)}}元</span></view>
 				<uni-table border :stripe="false" emptyText="接单后可查看更多数据" class="custom-table make">
 					<!-- 表头行 -->
 					<uni-tr style="background-color:#f5f5f5">
@@ -119,8 +119,8 @@
 			v-if="lotteryOrder.schemeDetails != null && lotteryOrder.schemeDetails != undefined && lotteryOrder.schemeDetails != '' && (lotteryOrder.type >= 9 && lotteryOrder.type <= 12)">
 			<!-- Adjust type range if needed -->
 			<p>
-				<view class="fw-700">方案详情</view>
-				<view>共:{{displaySchemeDetails.length}}张票<span class="price-amount">{{lotteryOrder.price.toFixed(2)}}元</span></view>
+				<view class="fw-700 scheme-title">方案详情</view>
+				<view class="scheme-summary">共:{{displaySchemeDetails.length}}张票<span class="price-amount">{{lotteryOrder.price.toFixed(2)}}元</span></view>
 				<uni-table border :stripe="false" emptyText="接单后可查看更多数据" class="custom-table make">
 					<!-- 表头行 -->
 					<uni-tr style="background-color:#f5f5f5">
@@ -290,9 +290,20 @@ export default {
 	margin-top: 15px;
 }
 
+.scheme-title {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.scheme-summary {
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
 .price-amount {
 	color: #ff4d4f;
 	font-weight: 500;
+	font-size: 20px;
 }
 
 /* 表格样式优化 */
@@ -312,19 +323,19 @@ export default {
 
 ::v-deep .uni-table-th {
 	font-weight: 600;
-	font-size: 13px;
+	font-size: 18px;
 	color: #333;
 	background-color: #e8eaef !important;
 	border: 1px solid #c1c6d2;
 	white-space: nowrap;
-	padding: 14px 8px;
+	padding: 18px 12px;
 	text-align: center;
 }
 
 ::v-deep .uni-table-td {
-	padding: 14px 8px;
-	font-size: 13px;
-	line-height: 1.5;
+	padding: 18px 12px;
+	font-size: 18px;
+	line-height: 1.6;
 	vertical-align: middle;
 	border: 1px solid #ddd;
 	text-align: center;
