@@ -92,7 +92,7 @@
 				<u-icon name="arrow-right" color="#999" size="26"></u-icon>
 			</view> -->
 			<view class="flex justify-between items-center p-30 border-b" @click="goToAgentData">
-				<text class="fs-28 c-333">他的邀請</text>
+				<text class="fs-28 c-333">他的邀請 <text class="count-badge" v-if="invitationCount > 0">({{ invitationCount }})</text></text>
 				<u-icon name="arrow-right" color="#999" size="26"></u-icon>
 			</view>
 			<view class="flex justify-between items-center p-30">
@@ -256,6 +256,7 @@ export default {
 			parentName: "", // 上级用户昵称
 			userRemark: "", // 用户备注
 			expertOrder: "", // 专家排序
+			invitationCount: 0, // 邀请人数
 
 			// 操作相关
 			showModal: false,
@@ -357,6 +358,9 @@ export default {
 
 					// 设置用户备注
 					this.userRemark = res.storeRemark || '';
+
+					// 设置邀请人数
+					this.invitationCount = res.invitationCount || 0;
 
 					// 获取上级用户昵称
 					if (this.user.pid) {
@@ -793,4 +797,10 @@ export default {
 
 <style lang="scss" scoped>
 /* 使用 tailwindcss 样式，无需额外样式 */
+.count-badge {
+	color: var(--themeColor);
+	font-weight: 500;
+	font-size: 24rpx;
+	margin-left: 4rpx;
+}
 </style>
