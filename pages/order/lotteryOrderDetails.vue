@@ -552,7 +552,7 @@ export default {
 		getOrderList(){
 			let that = this;
 			let queryParam = {
-				stateList: ["7","0"],
+				stateList: ["7"],
 				pageNo: 1,
 				pageSize: 10,
 				sortField: 'orderDeadline',
@@ -564,9 +564,9 @@ export default {
 						let item = res.voList[0];
 						this.goToOrderDetail(item.jointPurchaseId || item.id, item.hasGroupPurchase);
 					}else{
-						//跳转订单页面
+						//跳转订单页面，并打开待出票tab
 						uni.reLaunch({
-							url: "/pages/order/lotteryOrder"
+							url: "/pages/order/lotteryOrder?type=7"
 						});
 						// // 重新加载订单详情
 						// this.goToOrderDetail(that.lotteryOrder.jointPurchaseId || that.lotteryOrder.id, that.lotteryOrder.hasGroupPurchase);
